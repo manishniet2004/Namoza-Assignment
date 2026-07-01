@@ -24,7 +24,7 @@ This task defines the tracking infrastructure to measure user engagement and fun
 The landing page is optimized for speed and user experience.
 * **Performance Score:** 100/100 (Tested via PageSpeed Insights)
 * **Status:** Mobile-Optimized & Fast Loading
-![PageSpeed Score](./images/pagespeed-score.png)
+![PageSpeed Score](./Images/pagespeed-score.png)
 
 ---
 
