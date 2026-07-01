@@ -1,0 +1,88 @@
+### 2. `index.html` (Task 02 Solution)
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrthoNow - Expert Orthopaedic Opinion</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .trust {
+            background: #f4f4f4;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Get an expert orthopaedic opinion</h1>
+        <p>Book your consultation at OrthoNow.</p>
+
+        <div class="trust">Trusted by 50,000+ patients across 9 clinics.</div>
+
+        <form id="consultationForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <button type="submit">Book Now</button>
+        </form>
+
+        <div id="thankYou" style="display:none;">
+            <h3>Thank you! We will contact you soon.</h3>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('consultationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // GTM DataLayer Push
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'consultation_form_submitted',
+                'form_id': 'consultation_form',
+                'form_location': 'landing_page_hero',
+                'campaign': 'knee_back_pain_2026'
+            });
+
+            // UI feedback
+            document.getElementById('consultationForm').style.display = 'none';
+            document.getElementById('thankYou').style.display = 'block';
+
+            console.log("Form submitted and GTM event pushed!");
+        });
+    </script>
+</body>
+
+</html>
